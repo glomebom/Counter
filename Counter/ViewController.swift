@@ -27,41 +27,27 @@ class ViewController: UIViewController {
     var count: Int = 0
     
     @IBAction func counterPlusTouch(_ sender: Any) {
-        
         count += 1
-        
         counterLabesTextUpdate(value: count)
-        
         addMessageToHistoyView(message: .plus)
-        
         scrollToBotom()
     }
     
     @IBAction func counterMinusTouch(_ sender: Any) {
-        
         if count > 0 {
-            
             count -= 1
             counterLabesTextUpdate(value: count)
             addMessageToHistoyView(message: .minus)
-            
         } else {
-            
             addMessageToHistoyView(message: .belowZero)
-            
         }
-
         scrollToBotom()
     }
     
     @IBAction func counterResetTouch(_ sender: Any) {
-        
         count = 0
-        
         counterLabesTextUpdate(value: count)
-        
         addMessageToHistoyView(message: .reset)
-        
         scrollToBotom()
     }
     
