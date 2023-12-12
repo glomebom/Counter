@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     }
     
     // Прокрутка к низу counterHistoryView после добавления строки
-    private func scrollToBotom() {
+    private func scrollToBottom() {
         let range = NSMakeRange((counterHistoryView.text as NSString).length - 1, 1);
         counterHistoryView.scrollRangeToVisible(range);
     }
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         count += 1
         counterLabelTextUpdate(value: count)
         addMessageToHistoryView(message: .plus)
-        scrollToBotom()
+        scrollToBottom()
     }
     
     @IBAction private func counterMinusTouch(_ sender: Any) {
@@ -72,14 +72,14 @@ class ViewController: UIViewController {
         } else {
             addMessageToHistoryView(message: .belowZero)
         }
-        scrollToBotom()
+        scrollToBottom()
     }
     
     @IBAction private func counterResetTouch(_ sender: Any) {
         count = 0
         counterLabelTextUpdate(value: count)
         addMessageToHistoryView(message: .reset)
-        scrollToBotom()
+        scrollToBottom()
     }
     
 }
